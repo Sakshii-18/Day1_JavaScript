@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>6l Cart Quantity</title>
+</head>
+<body>
+  <p>Open the console (F12) to see the quantity</p>
+
+ 
+  <button onclick="
+    if (cartQuantity + 1 > 10) {
+      alert('The cart is full');
+    } else {
+      cartQuantity = cartQuantity + 1;
+      console.log(cartQuantity);
+    }
+  ">Add to cart</button>
+
+  <button onclick="
+    if (cartQuantity + 2 > 10) {
+      alert('The cart is full');
+    } else {
+      cartQuantity = cartQuantity + 2;
+      console.log(cartQuantity);
+    }
+  ">+2</button>
+
+  <button onclick="
+    if (cartQuantity + 3 > 10) {
+      alert('The cart is full');
+    } else {
+      cartQuantity = cartQuantity + 3;
+      console.log(cartQuantity);
+    }
+  ">+3</button>
+
+  <!-- Remove buttons (can't go below 0) -->
+  <button onclick="
+    if (cartQuantity - 1 < 0) {
+      alert('Not enough items in the cart');
+    } else {
+      cartQuantity = cartQuantity - 1;
+      console.log(cartQuantity);
+    }
+  ">Remove from cart</button>
+
+  <button onclick="
+    if (cartQuantity - 2 < 0) {
+      alert('Not enough items in the cart');
+    } else {
+      cartQuantity = cartQuantity - 2;
+      console.log(cartQuantity);
+    }
+  ">-2</button>
+
+  <button onclick="
+    if (cartQuantity - 3 < 0) {
+      alert('Not enough items in the cart');
+    } else {
+      cartQuantity = cartQuantity - 3;
+      console.log(cartQuantity);
+    }
+  ">-3</button>
+
+  <script>
+    let cartQuantity = 0;
+  </script>
+</body>
+</html>
