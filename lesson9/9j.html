@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>9j Calculator</title>
+</head>
+<body>
+  <p class="js-calculation"></p>
+
+  <button onclick="updateCalculation('1');">1</button>
+  <button onclick="updateCalculation('2');">2</button>
+  <button onclick="updateCalculation('3');">3</button>
+  <button onclick="updateCalculation('+');">+</button>
+  <button onclick="updateCalculation('-');">-</button>
+  <button onclick="updateCalculation('*');">*</button>
+  <button onclick="updateCalculation('/');">/</button>
+  <button onclick="
+    calculation = '';
+    localStorage.setItem('calculation', calculation);
+    displayCalculation();
+  ">Clear</button>
+  <button onclick="
+    calculation = String(eval(calculation));
+    localStorage.setItem('calculation', calculation);
+    displayCalculation();
+  ">=</button>
+
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+
+    function displayCalculation() {
+      document.querySelector('.js-calculation').innerHTML = calculation;
+    }
+
+    function updateCalculation(value) {
+      calculation += value;
+      localStorage.setItem('calculation', calculation);
+      displayCalculation();
+    }
+    displayCalculation();
+  </script>
+</body>
+</html>

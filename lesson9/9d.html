@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>9d</title>
+</head>
+<body>
+  <input class="js-name-input" type="text" placeholder="Enter your name">
+  <button onclick="
+    const inputElement = document.querySelector('.js-name-input');
+    const text = inputElement.value;
+    document.querySelector('.js-message').innerHTML = `Your name is: ${text}`;
+  ">Submit</button>
+
+  <p class="js-message"></p>
+</body>
+</html>

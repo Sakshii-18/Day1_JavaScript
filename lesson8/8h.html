@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>8h Calculator with localStorage</title>
+</head>
+<body>
+  <p>Open the console (F12) to see the calculation</p>
+
+  <button onclick="updateCalculation('1');">1</button>
+  <button onclick="updateCalculation('2');">2</button>
+  <button onclick="updateCalculation('3');">3</button>
+  <button onclick="updateCalculation('+');">+</button>
+  <button onclick="updateCalculation('-');">-</button>
+  <button onclick="updateCalculation('*');">*</button>
+  <button onclick="updateCalculation('/');">/</button>
+  <button onclick="calculation = ''; localStorage.setItem('calculation', calculation);console.log('Cleared');">Clear</button>
+  <button onclick="calculation = String(eval(calculation));localStorage.setItem('calculation', calculation);console.log(calculation);">=</button>
+
+  <script>
+   
+    let calculation = localStorage.getItem('calculation') || '';
+    console.log(calculation);
+
+    function updateCalculation(value) {
+      calculation += value;
+      console.log(calculation);
+     
+      localStorage.setItem('calculation', calculation);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>9g Amazon Shipping Calculator</title>
+</head>
+<body>
+  <p>Amazon Shipping Calculator (orders under $40 have $10 shipping)</p>
+
+  <input class="js-cost-input" type="text" placeholder="Cost of order">
+  <button onclick="calculateTotal();">Calculate</button>
+
+  <p class="js-total-cost"></p>
+
+  <script>
+    function calculateTotal() {
+      const inputElement = document.querySelector('.js-cost-input');
+      const cost = Number(inputElement.value);
+
+      let costCents = Math.round(cost * 100);
+
+      if (costCents < 4000) {
+        costCents += 1000;
+      }
+
+      const total = costCents / 100;
+      document.querySelector('.js-total-cost').innerHTML = `$${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
